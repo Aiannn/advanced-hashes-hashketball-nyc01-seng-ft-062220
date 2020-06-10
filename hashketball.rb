@@ -200,4 +200,57 @@ def big_shoe_rebounds
   return a 
 end
 
-big_shoe_rebounds
+def most_points_scored
+  max_point = 0 
+  max_player =""
+  game_hash.each do |key, value|
+    value[:players].each do |element|
+      if element[:points] > max_point
+        max_point = element[:points]
+        max_player = element[:player_name]
+      end
+    end
+  end
+  puts "#{max_player} scored #{max_point} points"
+end  
+
+def winning_team
+  sum = 0 
+  sum2 = 0 
+  game_hash.each do |key, value|
+      puts value
+  end
+end   
+
+def player_with_the_longest_name
+  longest_name_number = 0 
+  longest_name = ""
+  game_hash.each do |key, value|
+    value[:players].each do |element|
+      if element[:player_name].length > longest_name_number
+        longest_name_number = element[:player_name].length
+        longest_name = element[:player_name]
+      end   
+    end
+  end
+  puts "#{longest_name} has the longest name in #{longest_name_number} symbols"
+  return longest_name 
+end
+
+def long_name_steals_a_ton
+  max_number_of_steals = 0 
+  name_of_player = ""
+  game_hash.each do |key, value|
+    value[:players].each do |element|
+      if element[:steals] > max_number_of_steals
+        max_number_of_steals = element[:steals] 
+        name_of_player = element[:player_name]
+      end
+    end
+  end
+  if name_of_player == longest_name
+    puts longest name 
+  end   
+end  
+
+long_name_steals_a_ton
